@@ -54,6 +54,26 @@ table {
   box-sizing: border-box;
 }
 
+img, svg {
+  vertical-align: middle;
+}
+
+a, a:visited a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button, textarea, select, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ----- */
+
 @font-face {
   font-family: "tiempos";
   src: url(./fonts/Tiempos-Font/TiemposHeadline-Regular.otf);
@@ -61,18 +81,207 @@ table {
 
 @font-face {
   font-family: "inter";
-  src: url(./fonts/Inter-Font/static/Inter-Regular.ttf);
+  src: url(./fonts/Inter-Font/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 :root {
   --primary-white-0: white;
   --primary-white-1: #fdfbf9;
+  --primary-white-2: #dfd8d3;
+  --primary-white-3: #f5efeb;
   --primary-grey-0: #5c5856;
   --primary-grey-1: #1a1715;
   --accent-violet-100: #f5efeb;
+  --accent-violet-300: #d1cae9;
   --accent-violet-400: #9484c6;
   --accent-violet-600: #4b2aad;
+  --accent-violet-700: #37207e;
   --accent-violet-900: #201445;
 
   font-family: "inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--primary-grey-1);
+  font-size: 18px;
+}
+
+/* ----- UTILITY ----- */
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.button-dark {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: var(--accent-violet-600);
+  color: var(--primary-white-0);
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+}
+
+.button-dark:hover {
+  background-color: var(--accent-violet-700);
+}
+
+/* ----- JS / CSS ----- */
+
+.logoDarken {
+  fill: var(--accent-violet-700) !important;
+}
+
+.logoPath {
+  fill: var(--accent-violet-600);
+  transition: fill 0.25s ease;
+}
+
+.hoverItemBorder {
+  border-color: var(--accent-violet-300) !important;
+  background-color: var(--primary-white-3) !important;
+}
+
+.viewHidden {
+  display: none !important;
+}
+
+/* ----- */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-white-1);
+}
+
+#banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#main-nav, #side-nav, nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+#side-nav {
+  gap: 0.5rem;
+}
+
+#logo {
+  width: 4.5rem;
+  margin: -3px 1.5rem 0;
+  padding: 0;
+}
+
+#menu {
+  display: none;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: fit-content;
+}
+
+.dropdown::after {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: relative;
+  background-image: url(./icons/svg/bx-chevron-down.svg);
+  background-position: center;
+}
+
+.hover-item {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  border: 0.25rem solid transparent;
+  outline: none;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.hover-item:hover {
+  background-color: var(--primary-white-3);
+}
+
+.drop-content {
+  display: flex;
+  border: 1px solid var(--primary-white-2);
+  position: absolute;
+  padding: 1.5rem 0 3rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-white-0);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.drop-content ul:first-child {
+  border-right: 1px solid var(--primary-white-2)
+}
+
+.drop-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--primary-grey-0);
+  margin-left: 1.5rem;
+  padding-right: 3rem;
+}
+
+.drop-content li:not(:first-child):hover {
+  color: var(--accent-violet-600);
+  cursor: pointer;
+}
+
+.drop-subh {
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media screen and (max-width: 1124px) {
+  #banner {
+    padding: 1rem;
+  }
+
+  #menu {
+    display: flex;
+  }
+
+  #signup__desktop {
+    display: none;
+  }
+  
+  nav {
+    display: flex;
+    position: fixed;
+    top: -100px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  :root {
+    font-size: 16px;
+  }
+
+  #banner {
+    padding: 1rem 1rem;
+  }
+
+  #logo {
+    margin: -2px 1rem 0;
+  }
+
+  .hover-item {
+    padding: 0.75rem;
+  }
+
 }
