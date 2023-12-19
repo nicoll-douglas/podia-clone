@@ -25,33 +25,28 @@ const mediaQuery = (function () {
 
 
 const focusEffects = (function () {
-  let hoverItems = document.querySelectorAll(".hover-item");
-
-  (function clearMobileFocus() {
-    window.addEventListener("resize", () => {
-      if (mediaQuery.mobile.matches) {
-        hoverItems.forEach(item => {
-          item.classList.remove("hoverItemBorder");
-        })
-      }
-      if(mediaQuery.desktop.matches) {
-        document.querySelectorAll(".icon").forEach(chevron => {
-          chevron.classList.remove("rotate180");
-        })
-      }
-    })
-  })();
-
+  let dropdowns = document.querySelectorAll(".dropdown");
+  
   const removeFocusEffect = () => {
-    hoverItems.forEach(item => {
+    dropdowns.forEach(item => {
       if (mediaQuery.desktop.matches) {
         item.classList.remove("hoverItemBorder");
       }
     })
   }
+  
+  (function clearMobileFocus() {
+    window.addEventListener("resize", () => {
+      if (mediaQuery.mobile.matches) {
+        dropdowns.forEach(item => {
+          item.classList.remove("hoverItemBorder");
+        })
+      }
+    })
+  })();
 
   (function addFocusEffect() {
-    hoverItems.forEach(item => {
+    dropdowns.forEach(item => {
       item.addEventListener("click", () => {
         if (mediaQuery.desktop.matches) {
           removeFocusEffect();
@@ -84,10 +79,8 @@ const dropdown  = (function () {
 
     for (let i = 0; i < dropdowns.length; i++) {
       dropdowns[i].addEventListener("click", () => {
-        if (mediaQuery.mobile.matches) {
           if ([...dropContent].some(element => !element.matches("viewHidden")) && dropContent[i].classList.contains("viewHidden")) reset();
           rotate(i);
-        }
       })
     }
 
@@ -115,7 +108,7 @@ const dropdown  = (function () {
         hideDropdowns();
         chevronEffects.reset();
       }
-      if (!e.target.matches(".dropdown")) focusEffects.remove();
+      if (!e.target.matches(".dropdown, .dropdown svg")) focusEffects.remove();
    })
   })();
 })();
@@ -142,4 +135,11 @@ const dropdown  = (function () {
       menuLabel.classList.add("flexDisplay");
     })
   })();
+
+  window.addEventListener("resize", () => {
+    if (mediaQuery.desktop.matches) {
+      menuLabel.classList.remove("flexDisplay");
+      nav.classList.remove("flexDisplay");
+    }
+  })
 })();
