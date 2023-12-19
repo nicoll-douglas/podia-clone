@@ -143,3 +143,12 @@ const dropdown  = (function () {
     }
   })
 })();
+
+
+(function scrollEffects() {
+  let header = document.querySelector("header");
+  
+  document.addEventListener("scroll", () => {
+    document.body.scrollTop || document.documentElement.scrollTop === 0 ? header.classList.remove("headerScrollEffect") : header.classList.add("headerScrollEffect") ;
+  })
+})();

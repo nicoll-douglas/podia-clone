@@ -105,6 +105,9 @@ button {
 
 body {
   min-height: 100vh;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ----- UTILITY ----- */
@@ -166,6 +169,11 @@ body {
   display: flex !important;
 }
 
+.headerScrollEffect {
+  background-color: var(--primary-white-0) !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px !important;
+}
+
 /* ----- */
 
 header {
@@ -173,6 +181,13 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--primary-white-1);
+  transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+main {
+  margin-top: 5rem;
+  height: 40px;
+  background-color: #9484c6;
 }
 
 #banner {
