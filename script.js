@@ -152,3 +152,64 @@ const dropdown  = (function () {
     document.body.scrollTop || document.documentElement.scrollTop === 0 ? header.classList.remove("headerScrollEffect") : header.classList.add("headerScrollEffect") ;
   })
 })();
+
+
+(function sectionLinkEffects() {
+  const sectionLinks = document.querySelectorAll(".section-link");
+  const sectionLinkArrows = document.querySelectorAll(".section-link-arrow");
+
+  for (let i = 0; i < sectionLinks.length; i++) {
+    sectionLinks[i].addEventListener("mouseenter", () => {
+      sectionLinks[i].classList.add("darkenText");
+      sectionLinkArrows[i].classList.add("spaceOut");
+    })
+    sectionLinks[i].addEventListener("mouseleave", () => {
+      sectionLinks[i].classList.remove("darkenText");
+      sectionLinkArrows[i].classList.remove("spaceOut");
+    })
+  }
+})();
+
+
+(function footerDropdown() {
+  let footerDropdowns = document.querySelectorAll(".footer-list-title");
+  let footerDropContent = document.querySelectorAll(".footer-list-items");
+
+  (function footerChevronEffects() {
+    let chevrons = document.querySelectorAll(".footer-item-chevron");
+
+    function rotate(i) {
+      chevrons[i].classList.toggle("rotate180");
+    }
+
+    function reset() {
+      chevrons.forEach(chevron => {
+        chevron.classList.remove("rotate180");
+      })
+    }
+
+    for (let i = 0; i < footerDropdowns.length; i++) {
+      footerDropdowns[i].addEventListener("click", () => {
+          if ([...footerDropContent].some(element => !element.matches("flexDisplay")) && !footerDropContent[i].classList.contains("flexDisplay")) reset();
+          rotate(i);
+      })
+    }
+  })();
+
+  function hideFooterDropdowns() {
+    footerDropContent.forEach(element => {
+      element.classList.remove("flexDisplay");
+    })
+  }
+
+  (function toggleFooterDropdown() {
+    for (let i = 0; i < footerDropdowns.length; i++) {
+      footerDropdowns[i].addEventListener("click", () => {
+        if ([...footerDropContent].some(element => !element.matches("flexDisplay")) && !footerDropContent[i].classList.contains("flexDisplay")) hideFooterDropdowns();
+        footerDropContent[i].classList.toggle("flexDisplay");
+      })
+    }
+  })();
+
+
+})();
