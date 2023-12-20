@@ -84,6 +84,11 @@ button {
   src: url(./fonts/Inter-Font/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+@font-face {
+  font-family: "tiempos-medium";
+  src: url(./fonts/Tiempos-Font/TiemposHeadline-Medium.otf);
+}
+
 :root {
   --primary-white-0: white;
   --primary-white-1: #fdfbf9;
@@ -340,17 +345,15 @@ main {
 }
 
 h1 {
-  font-family: "tiempos", var(--fallback-fonts);
+  font-family: "tiempos-medium", var(--fallback-fonts);
   color: var(--primary-grey-1);
-  font-weight: 600;
   font-size: clamp(2rem, 0.9173rem + 2.2556vw, 2.75rem);;
   line-height: 1.3;
 }
 
 h2 {
-  font-family: "tiempos", var(--fallback-fonts);
+  font-family: "tiempos-medium", var(--fallback-fonts);
   color: var(--primary-grey-1);
-  font-weight: 600;
   line-height: 1.3;
   font-size: clamp(1.3rem, 0.3292rem + 2.0225vw, 1.75rem);
 }
