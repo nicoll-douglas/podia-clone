@@ -472,11 +472,11 @@ h2 {
   width: 1rem;
 }
 
+.icon:hover { cursor: pointer; }
+
 .header-chevron, .footer-chevron {
   transition: transform ease 0.3s;
 }
-
-.icon:hover { cursor: pointer; }
 
 .fill-dark {
   fill: var(--accent-violet-700) !important;
