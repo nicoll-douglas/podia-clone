@@ -1,338 +1,863 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Host and sell digital products | Podia</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" size="32x32" href="./icons/favicon-32x32.png">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header>
-    <div id="header-content-container">
-      <div id="main-nav">
-        <svg id="logo" class="cursor-pointer" height="26" width="74" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 26">
-          <path fill-rule="evenodd" d="M25.096 21.706c-1.168 0-2.236-.215-3.205-.643a7.988 7.988 0 01-2.532-1.753 8.196 8.196 0 01-1.67-2.63 8.537 8.537 0 01-.593-3.183v-.059c0-1.13.198-2.19.593-3.184a8.39 8.39 0 011.67-2.63 7.694 7.694 0 012.558-1.781c.988-.448 2.065-.672 3.232-.672 1.168 0 2.236.224 3.206.672a7.91 7.91 0 012.558 1.753 7.862 7.862 0 011.67 2.6c.395.993.593 2.054.593 3.184v.058c0 1.13-.207 2.201-.62 3.214a8.198 8.198 0 01-1.67 2.629 8.303 8.303 0 01-2.558 1.782c-.988.428-2.065.643-3.232.643zm.053-4.704c.467 0 .89-.087 1.266-.263.377-.194.7-.448.97-.76a3.6 3.6 0 00.62-1.139c.143-.428.215-.876.215-1.343v-.059c0-.487-.081-.944-.243-1.373a3.01 3.01 0 00-.646-1.14 2.946 2.946 0 00-.997-.788 2.659 2.659 0 00-1.238-.292c-.467 0-.89.097-1.266.292a2.71 2.71 0 00-.97.76 3.543 3.543 0 00-.592 1.11 4.294 4.294 0 00-.216 1.373v.058c0 .487.072.945.216 1.373.161.429.377.809.646 1.14.287.311.62.564.996.76.378.194.79.291 1.24.291zM52.487 2.6a2.6 2.6 0 012.6-2.6h.106a2.6 2.6 0 010 5.2h-.106a2.6 2.6 0 01-2.6-2.6zm.108 4.415a.5.5 0 01.5-.5h4.09a.5.5 0 01.5.5v13.81a.5.5 0 01-.5.5h-4.09a.5.5 0 01-.5-.5V7.016z"></path>
-          <path fill-rule="evenodd" d="M40.723 21.676a5.775 5.775 0 01-2.477-.555 6.504 6.504 0 01-2.047-1.636c-.593-.7-1.069-1.558-1.428-2.57-.34-1.013-.511-2.152-.511-3.418v-.059c0-1.285.17-2.434.511-3.447.36-1.032.826-1.899 1.4-2.6.593-.72 1.276-1.266 2.048-1.636a5.534 5.534 0 012.477-.584s3.357.029 4.45 1.515V1a1 1 0 011-1h3.112a1 1 0 011 1v19.826a.5.5 0 01-.5.5H45.64a.5.5 0 01-.5-.5v-.769c-1.451 1.486-4.417 1.62-4.417 1.62zm2.694-4.907c-.36.175-.745.263-1.158.263-.413 0-.8-.088-1.159-.264a2.942 2.942 0 01-.942-.73 4.062 4.062 0 01-.647-1.14 4.275 4.275 0 01-.242-1.46v-.058c0-.526.08-1.003.242-1.432a3.58 3.58 0 01.647-1.139c.27-.331.583-.584.942-.76.36-.175.746-.262 1.159-.262.413 0 .799.087 1.158.262.377.176.7.429.97.76.269.312.475.691.619 1.14.161.428.242.905.242 1.43v.06c0 .525-.08 1.012-.242 1.46-.144.428-.35.808-.62 1.14-.269.31-.592.554-.97.73zM0 6.021a.5.5 0 01.5-.5h4.117a.5.5 0 01.5.5v.86s1.328-1.126 2.936-1.506a5.08 5.08 0 011.481-.204c.862 0 1.68.195 2.451.584.79.37 1.482.906 2.074 1.607.593.7 1.06 1.558 1.4 2.57.36 1.013.54 2.153.54 3.419v.058c0 1.285-.18 2.444-.54 3.476-.34 1.013-.807 1.88-1.4 2.6a6.128 6.128 0 01-2.047 1.636c-.772.37-1.589.555-2.45.555 0 0-3.373 0-4.465-1.247V25.5a.5.5 0 01-.5.5H.5a.5.5 0 01-.5-.5V6.021zm9.157 10.747c-.359.176-.745.264-1.158.264-.413 0-.808-.088-1.185-.264a2.941 2.941 0 01-.943-.73 4.06 4.06 0 01-.646-1.14 4.76 4.76 0 01-.215-1.46v-.058c0-.526.071-1.003.215-1.432.162-.448.377-.827.646-1.139.27-.331.584-.584.943-.76a2.78 2.78 0 011.185-.262c.413 0 .8.087 1.158.262.36.176.674.429.943.76.27.312.485.691.646 1.14.162.428.243.905.243 1.43v.06c0 .525-.081 1.012-.243 1.46a3.577 3.577 0 01-.646 1.14c-.27.31-.584.554-.943.73zM62.258 21.355a5.664 5.664 0 001.94.321s3.52-.133 4.308-1.247v.397a.5.5 0 00.5.5h4.037a.5.5 0 00.5-.5V12.24c0-6.953-7.11-6.953-7.11-6.953-1.257 0-2.353.116-3.286.35-.772.18-1.512.417-2.22.708a.487.487 0 00-.281.58l.79 2.927c.08.29.395.445.677.341.48-.177.95-.322 1.41-.437a8.738 8.738 0 012.102-.233s2.962-.238 2.962 2.249h-3.555c-.862 0-1.643.107-2.343.321-.7.195-1.302.507-1.805.935-.484.41-.87.925-1.158 1.549-.27.623-.404 1.343-.404 2.161v.059c0 .779.126 1.47.377 2.074.252.604.593 1.12 1.024 1.548.43.41.942.72 1.535.935zM67.86 17.5c-.467.467-1.077.701-1.831.701-.521 0-.952-.146-1.293-.438 0 0-.85-1.42 0-2.533 0 0 1.007-1.127 3.851 0 0 2.048-.727 2.27-.727 2.27z" clip-rule="evenodd"></path>
-        </svg>
-        <div id="menu-label" class="display-none">Menu
-          <svg id="close-menu" class="cursor-pointer" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Host and sell digital products | Podia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      size="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div id="header-content-container">
+        <div id="main-nav">
+          <svg
+            id="logo"
+            class="cursor-pointer"
+            height="26"
+            width="74"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 74 26"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M25.096 21.706c-1.168 0-2.236-.215-3.205-.643a7.988 7.988 0 01-2.532-1.753 8.196 8.196 0 01-1.67-2.63 8.537 8.537 0 01-.593-3.183v-.059c0-1.13.198-2.19.593-3.184a8.39 8.39 0 011.67-2.63 7.694 7.694 0 012.558-1.781c.988-.448 2.065-.672 3.232-.672 1.168 0 2.236.224 3.206.672a7.91 7.91 0 012.558 1.753 7.862 7.862 0 011.67 2.6c.395.993.593 2.054.593 3.184v.058c0 1.13-.207 2.201-.62 3.214a8.198 8.198 0 01-1.67 2.629 8.303 8.303 0 01-2.558 1.782c-.988.428-2.065.643-3.232.643zm.053-4.704c.467 0 .89-.087 1.266-.263.377-.194.7-.448.97-.76a3.6 3.6 0 00.62-1.139c.143-.428.215-.876.215-1.343v-.059c0-.487-.081-.944-.243-1.373a3.01 3.01 0 00-.646-1.14 2.946 2.946 0 00-.997-.788 2.659 2.659 0 00-1.238-.292c-.467 0-.89.097-1.266.292a2.71 2.71 0 00-.97.76 3.543 3.543 0 00-.592 1.11 4.294 4.294 0 00-.216 1.373v.058c0 .487.072.945.216 1.373.161.429.377.809.646 1.14.287.311.62.564.996.76.378.194.79.291 1.24.291zM52.487 2.6a2.6 2.6 0 012.6-2.6h.106a2.6 2.6 0 010 5.2h-.106a2.6 2.6 0 01-2.6-2.6zm.108 4.415a.5.5 0 01.5-.5h4.09a.5.5 0 01.5.5v13.81a.5.5 0 01-.5.5h-4.09a.5.5 0 01-.5-.5V7.016z"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              d="M40.723 21.676a5.775 5.775 0 01-2.477-.555 6.504 6.504 0 01-2.047-1.636c-.593-.7-1.069-1.558-1.428-2.57-.34-1.013-.511-2.152-.511-3.418v-.059c0-1.285.17-2.434.511-3.447.36-1.032.826-1.899 1.4-2.6.593-.72 1.276-1.266 2.048-1.636a5.534 5.534 0 012.477-.584s3.357.029 4.45 1.515V1a1 1 0 011-1h3.112a1 1 0 011 1v19.826a.5.5 0 01-.5.5H45.64a.5.5 0 01-.5-.5v-.769c-1.451 1.486-4.417 1.62-4.417 1.62zm2.694-4.907c-.36.175-.745.263-1.158.263-.413 0-.8-.088-1.159-.264a2.942 2.942 0 01-.942-.73 4.062 4.062 0 01-.647-1.14 4.275 4.275 0 01-.242-1.46v-.058c0-.526.08-1.003.242-1.432a3.58 3.58 0 01.647-1.139c.27-.331.583-.584.942-.76.36-.175.746-.262 1.159-.262.413 0 .799.087 1.158.262.377.176.7.429.97.76.269.312.475.691.619 1.14.161.428.242.905.242 1.43v.06c0 .525-.08 1.012-.242 1.46-.144.428-.35.808-.62 1.14-.269.31-.592.554-.97.73zM0 6.021a.5.5 0 01.5-.5h4.117a.5.5 0 01.5.5v.86s1.328-1.126 2.936-1.506a5.08 5.08 0 011.481-.204c.862 0 1.68.195 2.451.584.79.37 1.482.906 2.074 1.607.593.7 1.06 1.558 1.4 2.57.36 1.013.54 2.153.54 3.419v.058c0 1.285-.18 2.444-.54 3.476-.34 1.013-.807 1.88-1.4 2.6a6.128 6.128 0 01-2.047 1.636c-.772.37-1.589.555-2.45.555 0 0-3.373 0-4.465-1.247V25.5a.5.5 0 01-.5.5H.5a.5.5 0 01-.5-.5V6.021zm9.157 10.747c-.359.176-.745.264-1.158.264-.413 0-.808-.088-1.185-.264a2.941 2.941 0 01-.943-.73 4.06 4.06 0 01-.646-1.14 4.76 4.76 0 01-.215-1.46v-.058c0-.526.071-1.003.215-1.432.162-.448.377-.827.646-1.139.27-.331.584-.584.943-.76a2.78 2.78 0 011.185-.262c.413 0 .8.087 1.158.262.36.176.674.429.943.76.27.312.485.691.646 1.14.162.428.243.905.243 1.43v.06c0 .525-.081 1.012-.243 1.46a3.577 3.577 0 01-.646 1.14c-.27.31-.584.554-.943.73zM62.258 21.355a5.664 5.664 0 001.94.321s3.52-.133 4.308-1.247v.397a.5.5 0 00.5.5h4.037a.5.5 0 00.5-.5V12.24c0-6.953-7.11-6.953-7.11-6.953-1.257 0-2.353.116-3.286.35-.772.18-1.512.417-2.22.708a.487.487 0 00-.281.58l.79 2.927c.08.29.395.445.677.341.48-.177.95-.322 1.41-.437a8.738 8.738 0 012.102-.233s2.962-.238 2.962 2.249h-3.555c-.862 0-1.643.107-2.343.321-.7.195-1.302.507-1.805.935-.484.41-.87.925-1.158 1.549-.27.623-.404 1.343-.404 2.161v.059c0 .779.126 1.47.377 2.074.252.604.593 1.12 1.024 1.548.43.41.942.72 1.535.935zM67.86 17.5c-.467.467-1.077.701-1.831.701-.521 0-.952-.146-1.293-.438 0 0-.85-1.42 0-2.533 0 0 1.007-1.127 3.851 0 0 2.048-.727 2.27-.727 2.27z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <div id="menu-label" class="display-none">
+            Menu
+            <svg
+              id="close-menu"
+              class="cursor-pointer"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+              />
+            </svg>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <button class="dropdown-btn hover-affected cursor-pointer">
+                  Website
+                  <svg
+                    class="header-chevron icon"
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#1a1715"
+                  >
+                    <path
+                      fill="#1a1715"
+                      d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="dropdown display-none">
+                  <ul>
+                    <li class="dropdown-heading">Platform</li>
+                    <li>
+                      <a href="https://www.podia.com/website-builder"
+                        >Website builder</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/examples"
+                        >Website examples</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="dropdown-heading">Features</li>
+                    <li>
+                      <a href="https://www.podia.com/features/landing-pages"
+                        >Landing pages</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/link-in-bio"
+                        >Link in bio pages</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/portfolio-website"
+                        >Portfolio websites</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/integrations"
+                        >Integrations</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button class="dropdown-btn hover-affected curser-pointer">
+                  Email
+                  <svg
+                    class="header-chevron icon"
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#1a1715"
+                  >
+                    <path
+                      fill="#1a1715"
+                      d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="dropdown display-none">
+                  <ul>
+                    <li class="dropdown-heading">Platform</li>
+                    <li>
+                      <a href="https://www.podia.com/email-marketing"
+                        >Email marketing</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/email-examples"
+                        >Email examples</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="dropdown-heading">Features</li>
+                    <li>
+                      <a href="https://www.podia.com/features/email-templates"
+                        >Email templates</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/email-designer"
+                        >Email designer</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/email-forms"
+                        >Email forms</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/email-analytics"
+                        >Email analytics</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/newsletters"
+                        >Newsletters</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/automations"
+                        >Automations</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/segmentation"
+                        >Segmentation</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button class="dropdown-btn hover-affected cursor-pointer">
+                  Sell
+                  <svg
+                    class="header-chevron icon"
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#1a1715"
+                  >
+                    <path
+                      fill="#1a1715"
+                      d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="dropdown display-none">
+                  <ul>
+                    <li class="dropdown-heading">Platform</li>
+                    <li>
+                      <a
+                        href="https://www.podia.com/features/sell-online-courses"
+                        >Online courses</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.podia.com/features/sell-digital-downloads"
+                        >Digital downloads</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/community">Community</a>
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/checkout"
+                        >Checkout</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="dropdown-heading">Features</li>
+                    <li>
+                      <a
+                        href="https://www.podia.com/features/multimedia-products"
+                        >Multimedia products</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/presell-products"
+                        >Presell products</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/upsells"
+                        >Upsells</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/sell-coaching"
+                        >Coaching</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/features/sell-webinars"
+                        >Webinars</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.podia.com/features/affiliate-marketing"
+                        >Affiliates</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button class="hover-affected cursor-pointer">Pricing</button>
+              </li>
+              <li>
+                <button class="dropdown-btn hover-affected cursor-pointer">
+                  Resources
+                  <svg
+                    class="header-chevron icon"
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#1a1715"
+                  >
+                    <path
+                      fill="#1a1715"
+                      d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="dropdown display-none">
+                  <ul>
+                    <li class="dropdown-heading">Free Resources</li>
+                    <li>
+                      <a href="https://www.podia.com/resources"
+                        >Resource center</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/podia-pros"
+                        >Hire a Podia pro</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/advice"
+                        >Creator Advice Library</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/demo">Podia demo site</a>
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/categories/creator-stories"
+                        >Creator stories</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/tools">Free tools</a>
+                    </li>
+                    <li>
+                      <a href="https://community.podia.com/"
+                        >Podia Creator Community</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.podia.com/support">Help center</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li id="signup-mobile">
+                <a href="https://app.podia.com/signup" class="button-dark"
+                  >Sign up free</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <button class="dropdown-btn hover-affected cursor-pointer">Website
-                <svg class="header-chevron icon" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-              </button>
-              <div class="dropdown display-none">
-                <ul>
-                  <li class="dropdown-heading">Platform</li>
-                  <li><a href="https://www.podia.com/website-builder">Website builder</a></li>
-                  <li><a href="https://www.podia.com/examples">Website examples</a></li>
-                </ul>
-                <ul>
-                  <li class="dropdown-heading">Features</li>
-                  <li><a href="https://www.podia.com/features/landing-pages">Landing pages</a></li>
-                  <li><a href="https://www.podia.com/features/link-in-bio">Link in bio pages</a></li>
-                  <li><a href="https://www.podia.com/features/portfolio-website">Portfolio websites</a></li>
-                  <li><a href="https://www.podia.com/integrations">Integrations</a></li>
-                </ul>
-              </div>
+        <div id="side-nav">
+          <a
+            href="https://app.podia.com/login"
+            class="cursor-pointer hover-affected"
+            >Login</a
+          >
+          <a
+            href="https://app.podia.com/signup"
+            class="button-dark cursor-pointer"
+            id="signup-desktop"
+            >Sign up free</a
+          >
+          <div id="open-menu" class="cursor-pointer hover-affected">
+            Menu
+            <svg
+              class="icon"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="main-content-container">
+        <section class="main-content-section">
+          <div>
+            <p class="section-label">Digital Products</p>
+            <h1>
+              Sell online courses, coaching sessions, webinars, workshops,
+              ebooks, and anything you can think of on Podia
+            </h1>
+            <p class="main-paragraph">
+              Get everything you need in one place that you own. Podia takes
+              care of hosting products, taking payments, and getting products to
+              your customers. And you always control your own work.
+            </p>
+            <a href="" class="button-dark">Get your free account</a>
+          </div>
+          <picture>
+            <img
+              src="./images/digital_products-hero.png"
+              alt="image of podia product creation screen"
+            />
+          </picture>
+        </section>
+        <section>
+          <div class="lvl-2-content-container">
+            <h2 class="h2-larger">
+              All you have to do is make the product. Podia takes care of the
+              details for you.
+            </h2>
+            <p class="main-paragraph">
+              Podia lets you make your sales page, take payments, and give your
+              customers access all in one place. Host and sell your products
+              without needing to figure out a handful of new tools.
+            </p>
+          </div>
+          <ul class="features-list">
+            <li class="feature">
+              <svg
+                class="feature-icon"
+                width="52"
+                height="52"
+                viewBox="0 0 52 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="52" height="52" rx="26" fill="#F5EFEB" />
+                <path
+                  d="M19.4 19L19 17H17L19.4 19ZM19.4 19H35L31 27H21M19.4 19L21 27M21 27L18.707 29.293C18.077 29.923 18.523 31 19.414 31H31M31 31C30.4696 31 29.9609 31.2107 29.5858 31.5858C29.2107 31.9609 29 32.4696 29 33C29 33.5304 29.2107 34.0391 29.5858 34.4142C29.9609 34.7893 30.4696 35 31 35C31.5304 35 32.0391 34.7893 32.4142 34.4142C32.7893 34.0391 33 33.5304 33 33C33 32.4696 32.7893 31.9609 32.4142 31.5858C32.0391 31.2107 31.5304 31 31 31ZM23 33C23 33.5304 22.7893 34.0391 22.4142 34.4142C22.0391 34.7893 21.5304 35 21 35C20.4696 35 19.9609 34.7893 19.5858 34.4142C19.2107 34.0391 19 33.5304 19 33C19 32.4696 19.2107 31.9609 19.5858 31.5858C19.9609 31.2107 20.4696 31 21 31C21.5304 31 22.0391 31.2107 22.4142 31.5858C22.7893 31.9609 23 32.4696 23 33Z"
+                  stroke="#9C8881"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h2 class="h2-smaller">Checkout and sales are handled for you</h2>
+              <p class="feature-info">
+                You don't have to figure out a bunch of tools or website embeds.
+                Just connect a payment provider and your Podia site takes care
+                of payments for you.
+              </p>
             </li>
-            <li>
-              <button class="dropdown-btn hover-affected curser-pointer">Email
-                <svg class="header-chevron icon" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-              </button>
-              <div class="dropdown display-none">
-                <ul>
-                  <li class="dropdown-heading">Platform</li>
-                  <li><a href="https://www.podia.com/email-marketing">Email marketing</a></li>
-                  <li><a href="https://www.podia.com/email-examples">Email examples</a></li>
-                </ul>
-                <ul>
-                  <li class="dropdown-heading">Features</li>
-                  <li><a href="https://www.podia.com/features/email-templates">Email templates</a></li>
-                  <li><a href="https://www.podia.com/features/email-designer">Email designer</a></li>
-                  <li><a href="https://www.podia.com/features/email-forms">Email forms</a></li>
-                  <li><a href="https://www.podia.com/features/email-analytics">Email analytics</a></li>
-                  <li><a href="https://www.podia.com/features/newsletters">Newsletters</a></li>
-                  <li><a href="https://www.podia.com/features/automations">Automations</a></li>
-                  <li><a href="https://www.podia.com/features/segmentation">Segmentation</a></li>
-                </ul> 
-              </div>
+            <li class="feature">
+              <svg
+                class="feature-icon"
+                width="52"
+                height="52"
+                viewBox="0 0 52 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="52" height="52" rx="26" fill="#F5EFEB" />
+                <path
+                  d="M26 30L30 26M30 26L26 22M30 26H19M21 30V31C21 31.7956 21.3161 32.5587 21.8787 33.1213C22.4413 33.6839 23.2044 34 24 34H31C31.7956 34 32.5587 33.6839 33.1213 33.1213C33.6839 32.5587 34 31.7956 34 31V21C34 20.2044 33.6839 19.4413 33.1213 18.8787C32.5587 18.3161 31.7956 18 31 18H24C23.2044 18 22.4413 18.3161 21.8787 18.8787C21.3161 19.4413 21 20.2044 21 21V22"
+                  stroke="#9C8881"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h2 class="h2-smaller">
+                Your customers log in, and your products are there for them
+              </h2>
+              <p class="feature-info">
+                Your Podia site handles access to products for you. Everything
+                is in one place. When your customers buy a product, they get a
+                log in. After that, they can see all the products they've bought
+                from you.
+              </p>
             </li>
-            <li>
-              <button class="dropdown-btn hover-affected cursor-pointer">Sell
-                <svg class="header-chevron icon" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-              </button>
-              <div class="dropdown display-none">
-                <ul>
-                  <li class="dropdown-heading">Platform</li>
-                  <li><a href="https://www.podia.com/features/sell-online-courses">Online courses</a></li>
-                  <li><a href="https://www.podia.com/features/sell-digital-downloads">Digital downloads</a></li>
-                  <li><a href="https://www.podia.com/community">Community</a></li>
-                  <li><a href="https://www.podia.com/features/checkout">Checkout</a></li>
-                </ul>
-                <ul>
-                  <li class="dropdown-heading">Features</li>
-                  <li><a href="https://www.podia.com/features/multimedia-products">Multimedia products</a></li>
-                  <li><a href="https://www.podia.com/features/presell-products">Presell products</a></li>
-                  <li><a href="https://www.podia.com/features/upsells">Upsells</a></li>
-                  <li><a href="https://www.podia.com/features/sell-coaching">Coaching</a></li>
-                  <li><a href="https://www.podia.com/features/sell-webinars">Webinars</a></li>
-                  <li><a href="https://www.podia.com/features/affiliate-marketing">Affiliates</a></li>
-                </ul>
-              </div>
+            <li class="feature">
+              <svg
+                class="feature-icon"
+                width="52"
+                height="52"
+                viewBox="0 0 52 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="52" height="52" rx="26" fill="#F5EFEB" />
+                <path
+                  d="M21.0045 30.9527C20.0195 30.9538 19.0687 30.5914 18.3343 29.935C17.6 29.2786 17.1336 28.3743 17.0246 27.3953C16.9156 26.4164 17.1716 25.4317 17.7436 24.6298C18.3156 23.8279 19.1634 23.2653 20.1245 23.0497C19.8464 21.7528 20.0949 20.3985 20.8153 19.2848C21.5357 18.1711 22.6691 17.3892 23.966 17.1112C25.2629 16.8331 26.6171 17.0816 27.7308 17.802C28.8445 18.5224 29.6264 19.6558 29.9045 20.9527H30.0045C31.2444 20.9514 32.4406 21.4109 33.3608 22.242C34.281 23.0731 34.8596 24.2165 34.9842 25.4502C35.1088 26.6838 34.7706 27.9198 34.0352 28.9181C33.2997 29.9165 32.2196 30.6059 31.0045 30.8527M29.0045 27.9527L26.0045 24.9527M26.0045 24.9527L23.0045 27.9527M26.0045 24.9527V30.9527V35.4526"
+                  stroke="#9C8881"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h2 class="h2-smaller">
+                Upload your product. Make your sales page. Done.
+              </h2>
+              <p class="feature-info">
+                You could sell a digital product by this afternoon. Podia
+                handles hosting, sales pages, checkout, and delivery. All you
+                need is something to sell.
+              </p>
             </li>
-            <li>
-              <button class="hover-affected cursor-pointer">Pricing</button>
-            </li>
-            <li>
-              <button class="dropdown-btn hover-affected cursor-pointer">Resources
-                <svg class="header-chevron icon" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-              </button>
-              <div class="dropdown display-none">
-                <ul>
-                  <li class="dropdown-heading">Free Resources</li>
-                  <li><a href="https://www.podia.com/resources">Resource center</a></li>
-                  <li><a href="https://www.podia.com/podia-pros">Hire a Podia pro</a></li>
-                  <li><a href="https://www.podia.com/advice">Creator Advice Library</a></li>
-                  <li><a href="https://www.podia.com/demo">Podia demo site</a></li>
-                  <li><a href="https://www.podia.com/categories/creator-stories">Creator stories</a></li>
-                  <li><a href="https://www.podia.com/tools">Free tools</a></li>
-                  <li><a href="https://community.podia.com/">Podia Creator Community</a></li>
-                  <li><a href="https://www.podia.com/support">Help center</a></li>
-                </ul>
-              </div>
-            </li>
-            <li id="signup-mobile"><a href="https://app.podia.com/signup" class="button-dark">Sign up free</a></li>
           </ul>
-        </nav>
-      </div>
-      <div id="side-nav">
-        <a href="https://app.podia.com/login" class="cursor-pointer hover-affected">Login</a>
-        <a href="https://app.podia.com/signup" class="button-dark cursor-pointer" id="signup-desktop">Sign up free</a>
-        <div id="open-menu" class="cursor-pointer hover-affected">Menu
-          <svg class="icon" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+        </section>
+        <section>
+          <div class="lvl-2-content-container">
+            <h2 class="h2-larger">
+              What kinds of products can you sell with Podia?
+            </h2>
+            <p class="main-paragraph">
+              Podia gives you the flexibility to sell whatever you want. That
+              means you have more ways to grow your creator business.
+            </p>
+          </div>
+        </section>
+        <section class="main-content-section">
+          <div>
+            <p class="section-label">Online Courses</p>
+            <h2>Beautiful online courses you can build in moments</h2>
+            <p class="main-paragraph">
+              Make a beautiful online course for your customers. Podia hosts
+              your course. That means all the lessons, files, and videos you
+              want handled for you.
+            </p>
+            <a
+              href="https://www.podia.com/compare-online-course-platforms"
+              class="section-link"
+              >Learn more about courses <span>&rarr;</span></a
+            >
+          </div>
+          <picture>
+            <img src="./images/digital_products-courses.png" alt="" />
+          </picture>
+        </section>
+        <article class="review">
+          <img src="./images/Stars__1_.png" alt="5 stars" />
+          <p class="review-quote">
+            I've wanted to offer e-courses for a while but always felt
+            overwhelmed with how to set it up. Podia has made it super easy.
+          </p>
+          <p>— Joy Cho, Oh Joy! Academy</p>
+        </article>
+        <section class="main-content-section">
+          <div>
+            <p class="section-label">Digital Downloads</p>
+            <h2>Ebooks, templates, and any file type you can think of</h2>
+            <p class="main-paragraph">
+              Have an ebook to sell? Templates you love? Podia makes it easy to
+              spin up a sales page and sell ebooks, templates, audio files,
+              video files, spreadsheets, and any other file type.
+            </p>
+            <a
+              href="https://www.podia.com/features/sell-digital-downloads"
+              class="section-link"
+              >Learn more about downloads <span>&rarr;</span></a
+            >
+          </div>
+          <picture>
+            <img src="./images/digital_products-downloads.png" alt="" />
+          </picture>
+        </section>
+        <article class="review">
+          <img src="./images/Stars__1_.png" alt="5 stars" />
+          <p class="review-quote">
+            We didn't have to stress about technical details or custom coding.
+            Using Podia made selling our first eBook quick, efficient, and fun.
+          </p>
+          <p>— Matt &amp; Steph, Plant-based food bloggers</p>
+        </article>
+        <section class="main-content-section">
+          <div>
+            <p class="section-label">Coaching</p>
+            <h2 class="h2-medium">
+              One-on-one coaching and consultations, with billing managed for
+              you
+            </h2>
+            <p class="main-paragraph">
+              Sometimes your students want one-on-one attention. Podia makes it
+              easy for you to charge for coaching sessions and consultations.
+            </p>
+            <a
+              href="https://www.podia.com/features/sell-coaching"
+              class="section-link"
+              >Learn more about coaching <span>&rarr;</span></a
+            >
+          </div>
+          <picture>
+            <img src="./images/digital_products-coaching.png" alt="" />
+          </picture>
+        </section>
+        <article class="review">
+          <img src="./images/Stars__1_.png" alt="5 stars" />
+          <p class="review-quote">
+            Podia just works. It's easy to use and includes everything you need
+            to sell digital products. I’ve tried all the alternatives, and Podia
+            is hard to beat.
+          </p>
+          <p>— Shawn Leamon, Divorce and Your Money</p>
+        </article>
+        <section class="main-content-section">
+          <div>
+            <p class="section-label">Webinars</p>
+            <h2 class="h2-medium">
+              Webinars and workshops with registration and payment in one place
+            </h2>
+            <p class="main-paragraph">
+              How can you charge for your webinars and workshops? Do it from
+              your Podia site. Set up a paid webinar product and your customers
+              can register straight from your website.
+            </p>
+            <a
+              href="https://www.podia.com/features/sell-webinars"
+              class="section-link"
+              >Learn more about webinars <span>&rarr;</span></a
+            >
+          </div>
+          <picture>
+            <img src="./images/digital_products-webinars.png" alt="" />
+          </picture>
+        </section>
+        <div id="signup-banner">
+          <h2>Get your free Podia account</h2>
+          <p>
+            Join the 150,000+ creators who use Podia to create websites, sell
+            digital products, and build online communities.
+          </p>
+          <a href="https://app.podia.com/signup" class="button-light"
+            >Sign up free</a
+          >
         </div>
       </div>
-    </div>
-  </header>
-  <main>
-    <div id="main-content-container">
-      <section class="main-content-section">
-        <div>
-          <p class="section-label">Digital Products</p>
-          <h1>Sell online courses, coaching sessions, webinars, workshops, ebooks, and anything you can think of on Podia</h1>
-          <p class="main-paragraph">Get everything you need in one place that you own. Podia takes care of hosting products, taking payments, and getting products to your customers. And you always control your own work.</p>
-          <a href="" class="button-dark">Get your free account</a>
-        </div>
-        <picture>
-          <img src="./images/digital_products-hero.png" alt="image of podia product creation screen">
-        </picture>
-      </section>
-      <section>
-        <div class="lvl-2-content-container">
-          <h2 class="h2-larger">All you have to do is make the product. Podia takes care of the details for you.</h2>
-          <p class="main-paragraph">Podia lets you make your sales page, take payments, and give your customers access all in one place. Host and sell your products without needing to figure out a handful of new tools.</p>
-        </div>
-        <ul class="features-list">
-          <li class="feature">
-            <svg class="feature-icon" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="52" height="52" rx="26" fill="#F5EFEB"/>
-              <path d="M19.4 19L19 17H17L19.4 19ZM19.4 19H35L31 27H21M19.4 19L21 27M21 27L18.707 29.293C18.077 29.923 18.523 31 19.414 31H31M31 31C30.4696 31 29.9609 31.2107 29.5858 31.5858C29.2107 31.9609 29 32.4696 29 33C29 33.5304 29.2107 34.0391 29.5858 34.4142C29.9609 34.7893 30.4696 35 31 35C31.5304 35 32.0391 34.7893 32.4142 34.4142C32.7893 34.0391 33 33.5304 33 33C33 32.4696 32.7893 31.9609 32.4142 31.5858C32.0391 31.2107 31.5304 31 31 31ZM23 33C23 33.5304 22.7893 34.0391 22.4142 34.4142C22.0391 34.7893 21.5304 35 21 35C20.4696 35 19.9609 34.7893 19.5858 34.4142C19.2107 34.0391 19 33.5304 19 33C19 32.4696 19.2107 31.9609 19.5858 31.5858C19.9609 31.2107 20.4696 31 21 31C21.5304 31 22.0391 31.2107 22.4142 31.5858C22.7893 31.9609 23 32.4696 23 33Z" stroke="#9C8881" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </main>
+    <footer>
+      <div id="footer-content-container">
+        <ul>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Platform
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
               </svg>
-            <h2 class="h2-smaller">Checkout and sales are handled for you</h2>
-            <p class="feature-info">You don't have to figure out a bunch of tools or website embeds. Just connect a payment provider and your Podia site takes care of payments for you.</p>
+            </p>
+            <ul class="footer-list-items">
+              <li><a href="https://www.podia.com/pricing">Pricing</a></li>
+              <li><a href="https://app.podia.com/signup">Sign up free</a></li>
+              <li><a href="https://www.podia.com/community">Community</a></li>
+              <li>
+                <a href="https://www.podia.com/website-builder"
+                  >Website builder</a
+                >
+              </li>
+              <li>
+                <a href="https://www.podia.com/digital-products"
+                  >Digital products</a
+                >
+              </li>
+              <li>
+                <a href="https://www.podia.com/email-marketing"
+                  >Email marketing</a
+                >
+              </li>
+            </ul>
           </li>
-          <li class="feature">
-            <svg class="feature-icon" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="52" height="52" rx="26" fill="#F5EFEB"/>
-              <path d="M26 30L30 26M30 26L26 22M30 26H19M21 30V31C21 31.7956 21.3161 32.5587 21.8787 33.1213C22.4413 33.6839 23.2044 34 24 34H31C31.7956 34 32.5587 33.6839 33.1213 33.1213C33.6839 32.5587 34 31.7956 34 31V21C34 20.2044 33.6839 19.4413 33.1213 18.8787C32.5587 18.3161 31.7956 18 31 18H24C23.2044 18 22.4413 18.3161 21.8787 18.8787C21.3161 19.4413 21 20.2044 21 21V22" stroke="#9C8881" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Support
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
               </svg>
-            <h2 class="h2-smaller">Your customers log in, and your products are there for them</h2>
-            <p class="feature-info">Your Podia site handles access to products for you. Everything is in one place. When your customers buy a product, they get a log in. After that, they can see all the products they've bought from you.</p>
+            </p>
+            <ul class="footer-list-items">
+              <li><a href="https://www.podia.com/support">Contact us</a></li>
+              <li><a href="https://help.podia.com/">Help center</a></li>
+              <li>
+                <a href="https://www.podia.com/podia-pros">Hire a Podia pro</a>
+              </li>
+              <li>
+                <a href="https://www.podia.com/creator-community"
+                  >Creator Community</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://help.podia.com/en/articles/79-getting-started-with-podia"
+                  >Podia 101</a
+                >
+              </li>
+            </ul>
           </li>
-          <li class="feature">
-            <svg class="feature-icon" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="52" height="52" rx="26" fill="#F5EFEB"/>
-              <path d="M21.0045 30.9527C20.0195 30.9538 19.0687 30.5914 18.3343 29.935C17.6 29.2786 17.1336 28.3743 17.0246 27.3953C16.9156 26.4164 17.1716 25.4317 17.7436 24.6298C18.3156 23.8279 19.1634 23.2653 20.1245 23.0497C19.8464 21.7528 20.0949 20.3985 20.8153 19.2848C21.5357 18.1711 22.6691 17.3892 23.966 17.1112C25.2629 16.8331 26.6171 17.0816 27.7308 17.802C28.8445 18.5224 29.6264 19.6558 29.9045 20.9527H30.0045C31.2444 20.9514 32.4406 21.4109 33.3608 22.242C34.281 23.0731 34.8596 24.2165 34.9842 25.4502C35.1088 26.6838 34.7706 27.9198 34.0352 28.9181C33.2997 29.9165 32.2196 30.6059 31.0045 30.8527M29.0045 27.9527L26.0045 24.9527M26.0045 24.9527L23.0045 27.9527M26.0045 24.9527V30.9527V35.4526" stroke="#9C8881" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Features
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
               </svg>
-            <h2 class="h2-smaller">Upload your product. Make your sales page. Done.</h2>
-            <p class="feature-info">You could sell a digital product by this afternoon. Podia handles hosting, sales pages, checkout, and delivery. All you need is something to sell.</p>
+            </p>
+            <ul class="footer-list-items">
+              <li>
+                <a href="https://www.podia.com/features/sell-online-courses"
+                  >Online courses</a
+                >
+              </li>
+              <li>
+                <a href="https://www.podia.com/features/sell-digital-downloads"
+                  >Downloads</a
+                >
+              </li>
+              <li>
+                <a href="https://www.podia.com/features/sell-webinars"
+                  >Webinars</a
+                >
+              </li>
+              <li>
+                <a href="https://www.podia.com/features/sell-coaching"
+                  >Coaching</a
+                >
+              </li>
+              <li><a href="https://www.podia.com/features">All features</a></li>
+            </ul>
+          </li>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Compare
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
+            </p>
+            <ul class="footer-list-items">
+              <li>
+                <a href="https://www.podia.com/podia-vs-kajabi">Kajabi</a>
+              </li>
+              <li>
+                <a href="https://www.podia.com/podia-vs-teachable">Teachable</a>
+              </li>
+              <li>
+                <a href="https://www.podia.com/podia-vs-thinkific">Thinkific</a>
+              </li>
+              <li>
+                <a href="https://www.podia.com/podia-vs-patreon">Patreon</a>
+              </li>
+              <li>
+                <a href="https://www.podia.com/podia-vs-gumroad">Gumroad</a>
+              </li>
+              <li>
+                <a href="https://www.podia.com/podia-alternatives"
+                  >Podia alternatives</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Resources
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
+            </p>
+            <ul class="footer-list-items">
+              <li><a href="https://www.podia.com/examples">Examples</a></li>
+              <li><a href="https://www.podia.com/demo">Demo</a></li>
+              <li>
+                <a href="https://www.podia.com/categories/creator-stories"
+                  >Creator stories</a
+                >
+              </li>
+              <li><a href="https://www.podia.com/articles">Blog</a></li>
+              <li><a href="https://www.podia.com/tools">Free tools</a></li>
+              <li>
+                <a href="https://www.podia.com/resources">All resources</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Podia
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
+            </p>
+            <ul class="footer-list-items">
+              <li><a href="https://www.podia.com/jobs">Jobs</a></li>
+              <li><a href="https://www.podia.com/about">About</a></li>
+              <li>
+                <a href="https://www.podia.com/podia-branding">Branding</a>
+              </li>
+              <li><a href="https://www.podia.com/reviews">Reviews</a></li>
+              <li>
+                <a href="https://www.podia.com/refer-a-creator-program"
+                  >Refer-a-creator</a
+                >
+              </li>
+              <li><a href="https://www.podia.com/affiliates">Affiliates</a></li>
+            </ul>
+          </li>
+          <li class="footer-list">
+            <p class="footer-list-heading">
+              Social
+              <svg
+                class="footer-chevron icon"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1a1715"
+              >
+                <path
+                  fill="#1a1715"
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
+            </p>
+            <ul class="footer-list-items">
+              <li><a href="https://twitter.com/podia">Twitter</a></li>
+              <li>
+                <a href="https://www.facebook.com/podiadotcom">Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/podiadotcom/">Instagram</a>
+              </li>
+              <li><a href="https://www.youtube.com/c/PodiaTV">YouTube</a></li>
+            </ul>
           </li>
         </ul>
-      </section>
-      <section>
-        <div class="lvl-2-content-container">
-          <h2 class="h2-larger">What kinds of products can you sell with Podia?</h2>
-          <p class="main-paragraph">Podia gives you the flexibility to sell whatever you want. That means you have more ways to grow your creator business.</p>
+        <div class="site-credits">
+          <p>Podia Labs, Inc. &#169; 2023</p>
+          <a href="https://www.podia.com/terms">Terms</a>
+          <a href="https://www.podia.com/privacy">Privacy</a>
         </div>
-      </section>
-      <section class="main-content-section">
-        <div>
-          <p class="section-label">Online Courses</p>
-          <h2>Beautiful online courses you can build in moments</h2>
-          <p class="main-paragraph">Make a beautiful online course for your customers. Podia hosts your course. That means all the lessons, files, and videos you want handled for you.</p>
-          <a href="https://www.podia.com/compare-online-course-platforms" class="section-link">Learn more about courses <span>&rarr;</span></a>
-        </div>
-        <picture>
-          <img src="./images/digital_products-courses.png" alt="">
-        </picture>
-      </section>
-      <article class="review">
-        <img src="./images/Stars__1_.png" alt="5 stars">
-        <p class="review-quote">I've wanted to offer e-courses for a while but always felt overwhelmed with how to set it up. Podia has made it super easy.</p>
-        <p>— Joy Cho, Oh Joy! Academy</p>
-      </article>
-      <section class="main-content-section">
-        <div>
-          <p class="section-label">Digital Downloads</p>
-          <h2>Ebooks, templates, and any file type you can think of</h2>
-          <p class="main-paragraph">Have an ebook to sell? Templates you love? Podia makes it easy to spin up a sales page and sell ebooks, templates, audio files, video files, spreadsheets, and any other file type.</p>
-          <a href="https://www.podia.com/features/sell-digital-downloads" class="section-link">Learn more about downloads <span>&rarr;</span></a>
-        </div>
-        <picture>
-          <img src="./images/digital_products-downloads.png" alt="">
-        </picture>
-      </section>
-      <article class="review">
-        <img src="./images/Stars__1_.png" alt="5 stars">
-        <p class="review-quote">We didn't have to stress about technical details or custom coding. Using Podia made selling our first eBook quick, efficient, and fun.</p>
-        <p>— Matt &amp; Steph, Plant-based food bloggers</p>
-      </article>
-      <section class="main-content-section">
-        <div>
-          <p class="section-label">Coaching</p>
-          <h2 class="h2-medium">One-on-one coaching and consultations, with billing managed for you</h2>
-          <p class="main-paragraph">Sometimes your students want one-on-one attention. Podia makes it easy for you to charge for coaching sessions and consultations.</p>
-          <a href="https://www.podia.com/features/sell-coaching" class="section-link">Learn more about coaching <span>&rarr;</span></a>
-        </div>
-        <picture>
-          <img src="./images/digital_products-coaching.png" alt="">
-        </picture>
-      </section>
-      <article class="review">
-        <img src="./images/Stars__1_.png" alt="5 stars">
-        <p class="review-quote">Podia just works. It's easy to use and includes everything you need to sell digital products. I’ve tried all the alternatives, and Podia is hard to beat.</p>
-        <p>— Shawn Leamon, Divorce and Your Money</p>
-      </article>
-      <section class="main-content-section">
-        <div>
-          <p class="section-label">Webinars</p>
-          <h2 class="h2-medium">Webinars and workshops with registration and payment in one place</h2>
-          <p class="main-paragraph">How can you charge for your webinars and workshops? Do it from your Podia site. Set up a paid webinar product and your customers can register straight from your website.</p>
-          <a href="https://www.podia.com/features/sell-webinars" class="section-link">Learn more about webinars <span>&rarr;</span></a>
-        </div>
-        <picture>
-          <img src="./images/digital_products-webinars.png" alt="">
-        </picture>
-      </section>
-      <div id="signup-banner">
-        <h2>Get your free Podia account</h2>
-        <p>Join the 150,000+ creators who use Podia to create websites, sell digital products, and build online communities.</p>
-        <a href="https://app.podia.com/signup" class="button-light">Sign up free</a>
       </div>
-    </div>
-  </main>
-  <footer>
-    <div id="footer-content-container">
-      <ul>
-        <li class="footer-list">
-          <p class="footer-list-heading">Platform
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://www.podia.com/pricing">Pricing</a></li>
-            <li><a href="https://app.podia.com/signup">Sign up free</a></li>
-            <li><a href="https://www.podia.com/community">Community</a></li>
-            <li><a href="https://www.podia.com/website-builder">Website builder</a></li>
-            <li><a href="https://www.podia.com/digital-products">Digital products</a></li>
-            <li><a href="https://www.podia.com/email-marketing">Email marketing</a></li>
-          </ul>
-        </li>
-        <li class="footer-list">
-          <p class="footer-list-heading">Support
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://www.podia.com/support">Contact us</a></li>
-            <li><a href="https://help.podia.com/">Help center</a></li>
-            <li><a href="https://www.podia.com/podia-pros">Hire a Podia pro</a></li>
-            <li><a href="https://www.podia.com/creator-community">Creator Community</a></li>
-            <li><a href="https://help.podia.com/en/articles/79-getting-started-with-podia">Podia 101</a></li>
-          </ul>
-        </li>
-        <li class="footer-list">
-          <p class="footer-list-heading">Features
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://www.podia.com/features/sell-online-courses">Online courses</a></li>
-            <li><a href="https://www.podia.com/features/sell-digital-downloads">Downloads</a></li>
-            <li><a href="https://www.podia.com/features/sell-webinars">Webinars</a></li>
-            <li><a href="https://www.podia.com/features/sell-coaching">Coaching</a></li>
-            <li><a href="https://www.podia.com/features">All features</a></li>
-          </ul>
-        </li>
-        <li class="footer-list">
-          <p class="footer-list-heading">Compare
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://www.podia.com/podia-vs-kajabi">Kajabi</a></li>
-            <li><a href="https://www.podia.com/podia-vs-teachable">Teachable</a></li>
-            <li><a href="https://www.podia.com/podia-vs-thinkific">Thinkific</a></li>
-            <li><a href="https://www.podia.com/podia-vs-patreon">Patreon</a></li>
-            <li><a href="https://www.podia.com/podia-vs-gumroad">Gumroad</a></li>
-            <li><a href="https://www.podia.com/podia-alternatives">Podia alternatives</a></li>
-          </ul>
-        </li>
-        <li class="footer-list">
-          <p class="footer-list-heading">Resources
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://www.podia.com/examples">Examples</a></li>
-            <li><a href="https://www.podia.com/demo">Demo</a></li>
-            <li><a href="https://www.podia.com/categories/creator-stories">Creator stories</a></li>
-            <li><a href="https://www.podia.com/articles">Blog</a></li>
-            <li><a href="https://www.podia.com/tools">Free tools</a></li>
-            <li><a href="https://www.podia.com/resources">All resources</a></li>
-          </ul>
-        </li>
-        <li class="footer-list">
-          <p class="footer-list-heading">Podia
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://www.podia.com/jobs">Jobs</a></li>
-            <li><a href="https://www.podia.com/about">About</a></li>
-            <li><a href="https://www.podia.com/podia-branding">Branding</a></li>
-            <li><a href="https://www.podia.com/reviews">Reviews</a></li>
-            <li><a href="https://www.podia.com/refer-a-creator-program">Refer-a-creator</a></li>
-            <li><a href="https://www.podia.com/affiliates">Affiliates</a></li>
-          </ul>
-        </li>
-        <li class="footer-list">
-          <p class="footer-list-heading">Social
-            <svg class="footer-chevron icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1715"><path fill="#1a1715" d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
-          </p>
-          <ul class="footer-list-items">
-            <li><a href="https://twitter.com/podia">Twitter</a></li>
-            <li><a href="https://www.facebook.com/podiadotcom">Facebook</a></li>
-            <li><a href="https://www.instagram.com/podiadotcom/">Instagram</a></li>
-            <li><a href="https://www.youtube.com/c/PodiaTV">YouTube</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="site-credits">
-        <p>Podia Labs, Inc. &#169; 2023</p>
-        <a href="https://www.podia.com/terms">Terms</a>
-        <a href="https://www.podia.com/privacy">Privacy</a>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
